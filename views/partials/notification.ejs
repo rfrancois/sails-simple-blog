@@ -1,0 +1,9 @@
+<%
+var notifications = flash.all();
+for(var a in notifications) { %>
+<div class="<%= a %>">
+<% for (var b in notifications[a]) { %>
+<p><%= notifications[a][b] %></p>
+<% } %>
+</div>
+<% } %>

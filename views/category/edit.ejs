@@ -1,0 +1,6 @@
+<%- partial('new.ejs') %>
+<form method="post" action="/category/delete/<%= slug %>">
+  <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+  <input type="submit" value="Supprimer">
+</form>
+<%- partial('list.ejs') %>

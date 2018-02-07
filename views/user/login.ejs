@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+<%- partial('../partials/notification.ejs') %>
+
+<form action="/login" method="post">
+
+  <label for="email">Your email address?</label>
+  <input name="email" type="text" <%- partial('../partials/value.ejs', {name: "email"}) %>/><%- partial('../partials/errors.ejs', {name: "email"}) %>
+  <br/>
+
+  <label for="password">Your safe word?</label>
+  <input name="password" type="password" /><%- partial('../partials/errors.ejs', {name: "password"}) %>
+  <br/>
+
+  <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+
+  <input type="submit"/>
+</form>

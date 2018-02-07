@@ -1,0 +1,12 @@
+<% if (typeof form!== 'undefined' && typeof form[name] !== undefined) {
+  if (typeof type !== 'undefined') {
+    if(type == 'textarea') {
+%><%= form[name] %><%
+    }
+    else if(type=="checkbox" && typeof form[list] !== 'undefined' && ((form[list][0] instanceof Object && form[list].find(function(item){return item.slug == value})) || form[list].indexOf(value) >= 0)) { %>
+checked="checked"
+    <% }
+ } else { %>
+value="<%= form[name] %>"<%
+  }
+} %>

@@ -1,0 +1,4 @@
+<h1><%= title %></h1>
+<p>Bonjour <strong><%= name %></strong>,</p>
+<p>Nous avons bien enregistré votre inscription sur <strong><%= sails.config.myconf.name %></strong>. Pour finaliser votre, inscription, veuillez vous rendre sur ce lien :</p>
+<a href="<%= sails.config.myconf.url %>/activate/<%= slug %>/<%= token %>"><%= sails.config.myconf.url %>/activate/<%= slug %>/<%= token %></a>

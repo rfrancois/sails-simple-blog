@@ -1,0 +1,16 @@
+<h1>Write an article</h1>
+
+<%- partial('../partials/notification.ejs') %>
+
+<form method="post">
+  <input type="text" name="title" <%- partial('../partials/value.ejs', {name: "title"}) %>><%- partial('../partials/errors.ejs', {name: "title"}) %><br>
+  <textarea name="text" cols="30" rows="10"><%- partial('../partials/value.ejs', {name: "text", type: "textarea"}) %></textarea><%- partial('../partials/errors.ejs', {name: "text"}) %><br>
+  <% if(typeof categories !== "undefined") { categories.forEach(function(item){ %>
+  <input type="checkbox" value="<%= item.slug %>" name="categories[]" id="category-<%= item.slug %>" <%- partial('../partials/value.ejs', {name: "text", type: "checkbox", list: "categories", value: item.slug}) %>>
+  <label for="category-<%= item.slug %>"><%= item.name %></label>
+  <% }) } %>
+  <%- partial('../partials/errors.ejs', {name: "categories"}) %>
+  <br>
+  <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+  <input type="submit">
+</form>

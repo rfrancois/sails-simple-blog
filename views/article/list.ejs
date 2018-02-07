@@ -1,0 +1,5 @@
+<ul>
+  <% records.data.forEach(function(item){ %>
+  <li><a title="Lire l'article <%= item.title %>" href="/article/<%= item.slug %>"><%= item.title %> de <%= item.author.name %></a></li>
+  <% }) %>
+</ul>

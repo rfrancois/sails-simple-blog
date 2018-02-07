@@ -1,0 +1,5 @@
+<% if (typeof errors!== 'undefined' && typeof name!== 'undefined' && errors[name]) { %>
+  <% errors[name].forEach(function(item){ %>
+  <%= item.message %>
+  <% }); %>
+<% } %>

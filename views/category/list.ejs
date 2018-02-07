@@ -1,0 +1,5 @@
+<ul>
+  <% categories.forEach(function(item){ %>
+  <li><a title="Editer <%= item.name%>" href="/category/edit/<%= item.slug %>"><%= item.name %></a></li>
+  <% }) %>
+</ul>

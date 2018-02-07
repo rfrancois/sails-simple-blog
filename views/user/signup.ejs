@@ -1,0 +1,21 @@
+<h1>Signup</h1>
+
+<%- partial('../partials/notification.ejs') %>
+
+<form action="/signup" method="post">
+  <label for="name">What's your name?</label>
+  <input name="name" type="text" <%- partial('../partials/value.ejs', {name: "name"}) %>/><%- partial('../partials/errors.ejs', {name: "name"}) %>
+  <br/>
+
+  <label for="email">What's your email?</label>
+  <input name="email" type="text" <%- partial('../partials/value.ejs', {name: "email"}) %>/><%- partial('../partials/errors.ejs', {name: "email"}) %>
+  <br/>
+
+  <label for="password">Choose a Password</label>
+  <input name="password" type="password"/><%- partial('../partials/errors.ejs', {name: "password"}) %>
+  <br/>
+
+  <input type='hidden' name='_csrf' value='<%= _csrf %>'>
+
+  <input type="submit"/>
+</form>
